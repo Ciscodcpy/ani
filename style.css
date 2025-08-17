@@ -1,0 +1,29 @@
+body {
+  margin:0; padding:0;
+  font-family: Arial, sans-serif;
+  background: #121212;
+  color: #fff;
+}
+
+/* Hero Slider */
+.hero-slider { position: relative; width:100%; height:400px; overflow:hidden; margin-bottom:2rem;}
+.slides { display:flex; width:300%; height:100%; transition: transform 1s ease-in-out;}
+.slide { flex:1 0 100%; height:100%;}
+.slide img { width:100%; height:100%; object-fit:cover;}
+
+/* Faded edges */
+.hero-slider::before,
+.hero-slider::after {
+  content:''; position:absolute; top:0; width:80px; height:100%; z-index:2; pointer-events:none;
+}
+.hero-slider::before { left:0; background: linear-gradient(to right, #121212, transparent);}
+.hero-slider::after { right:0; background: linear-gradient(to left, #121212, transparent);}
+
+/* Movie Rows */
+.movie-row { margin:20px;}
+.movie-row h2 { margin:0 0 10px 20px; font-size:1.8rem;}
+.row { display:flex; overflow-x:auto; gap:10px; padding-left:20px;}
+.movie-card { flex:0 0 auto; width:150px; text-align:center;}
+.movie-card img { width:100%; border-radius:10px; cursor:pointer; transition: transform 0.3s;}
+.movie-card img:hover { transform: scale(1.05);}
+.movie-card h3 { font-size:1rem; margin-top:5px;}
