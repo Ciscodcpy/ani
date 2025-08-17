@@ -1,10 +1,11 @@
-let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
-const totalSlides = slides.length;
+let currentSlide = 0;
+slides[currentSlide].classList.add('active');
 
 function showNextSlide() {
-  currentSlide = (currentSlide + 1) % totalSlides;
-  document.querySelector('.slides').style.transform = `translateX(-${currentSlide * 100}%)`;
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add('active');
 }
 
 setInterval(showNextSlide, 5000);
