@@ -1,12 +1,10 @@
-const slides = document.querySelectorAll('.slide');
 let currentSlide = 0;
-slides[currentSlide].classList.add('active');
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
 
 function showNextSlide() {
-  slides[currentSlide].classList.remove('active');
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].classList.add('active');
+  currentSlide = (currentSlide + 1) % totalSlides;
+  document.querySelector('.slides').style.transform = `translateX(-${currentSlide * 100}%)`;
 }
 
-// Auto-slide every 5 seconds
 setInterval(showNextSlide, 5000);
