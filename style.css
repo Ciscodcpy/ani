@@ -18,7 +18,6 @@ body {
 body::-webkit-scrollbar { width: 8px; }
 body::-webkit-scrollbar-thumb { background-color: #444; border-radius: 4px; }
 
-/* === Hero Slider (Fade Effect) === */
 .hero-slider {
   position: relative;
   width: 100%;
@@ -35,9 +34,7 @@ body::-webkit-scrollbar-thumb { background-color: #444; border-radius: 4px; }
   transition: opacity 1.5s ease-in-out;
 }
 
-.slide.active {
-  opacity: 1;
-}
+.slide.active { opacity: 1; }
 
 .slide img {
   width: 100%;
@@ -45,19 +42,20 @@ body::-webkit-scrollbar-thumb { background-color: #444; border-radius: 4px; }
   object-fit: cover;
 }
 
-/* Faded edges */
-.hero-slider::before,
-.hero-slider::after {
-  content: '';
+/* === Faded edges on all sides === */
+.fade-overlay {
   position: absolute;
-  top: 0;
-  width: 80px;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none; /* doesn’t block clicks */
+  background: 
+    linear-gradient(to top, #121212 0%, transparent 15%),
+    linear-gradient(to bottom, #121212 0%, transparent 15%),
+    linear-gradient(to left, #121212 0%, transparent 10%),
+    linear-gradient(to right, #121212 0%, transparent 10%);
+  background-blend-mode: overlay;
   z-index: 2;
-  pointer-events: none;
 }
-.hero-slider::before { left: 0; background: linear-gradient(to right, #121212, transparent); }
-.hero-slider::after { right: 0; background: linear-gradient(to left, #121212, transparent); }
 
 /* === Movie Rows === */
 .movie-row { margin: 20px 0; }
@@ -130,3 +128,4 @@ body::-webkit-scrollbar-thumb { background-color: #444; border-radius: 4px; }
   .movie-card { width: 120px; }
   .btn { padding: 0.6rem 1.5rem; font-size: 0.9rem; }
 }
+
