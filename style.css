@@ -18,12 +18,21 @@ body {
 body::-webkit-scrollbar { width: 8px; }
 body::-webkit-scrollbar-thumb { background-color: #444; border-radius: 4px; }
 
+/*hero slider*/
+
 .hero-slider {
   position: relative;
   width: 100%;
   height: 400px;
   overflow: hidden;
   margin-bottom: 2rem;
+}
+
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Below overlay */
 }
 
 .slide {
@@ -40,23 +49,22 @@ body::-webkit-scrollbar-thumb { background-color: #444; border-radius: 4px; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-/* === Faded edges on all sides === */
 .fade-overlay {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  pointer-events: none; /* doesn’t block clicks */
+  pointer-events: none;
+  z-index: 2; /* Above slides */
   background: 
     linear-gradient(to top, #121212 0%, transparent 15%),
     linear-gradient(to bottom, #121212 0%, transparent 15%),
     linear-gradient(to left, #121212 0%, transparent 10%),
     linear-gradient(to right, #121212 0%, transparent 10%);
   background-blend-mode: overlay;
-  z-index: 2;
 }
-
 /* === Movie Rows === */
 .movie-row { margin: 20px 0; }
 .movie-row h2 { margin: 0 0 10px 20px; font-size: 1.8rem; font-weight: 700; }
@@ -128,4 +136,5 @@ body::-webkit-scrollbar-thumb { background-color: #444; border-radius: 4px; }
   .movie-card { width: 120px; }
   .btn { padding: 0.6rem 1.5rem; font-size: 0.9rem; }
 }
+
 
