@@ -49,6 +49,7 @@
     border-radius: 6px;
     text-decoration: none;
     transition: 0.2s;
+    cursor: pointer;
   }
   .episode-list a:hover {
     background: #333;
@@ -62,44 +63,44 @@
 
   <!-- Video player -->
   <div style="display:flex; justify-content:center; margin:20px;">
-    <iframe src="https://drive.google.com/file/d/YOUR_FILE_ID/preview" 
+    <iframe id="player" src="https://drive.google.com/file/d/YOUR_FILE_ID/preview" 
             width="800" height="450" allow="autoplay" style="border:none;" title="Episode Player"></iframe>
   </div>
 
   <!-- Buttons -->
   <div class="btn-container">
-    <button class="btn">SUB</button>
-    <button class="btn">DUB</button>
+    <button class="btn" id="subBtn">SUB</button>
+    <button class="btn" id="dubBtn">DUB</button>
   </div>
 
   <!-- Episode List -->
   <h2 style="text-align:center;">Episodes</h2>
-  <div class="episode-list">
-    <!-- Replace EPISODE_LINK_HERE with Google Drive preview links -->
-    <a href="https://drive.google.com/file/d/EPISODE1_ID/preview" target="_blank">Episode 1</a>
-    <a href="https://drive.google.com/file/d/EPISODE2_ID/preview" target="_blank">Episode 2</a>
-    <a href="https://drive.google.com/file/d/EPISODE3_ID/preview" target="_blank">Episode 3</a>
-    <a href="https://drive.google.com/file/d/EPISODE4_ID/preview" target="_blank">Episode 4</a>
-    <a href="https://drive.google.com/file/d/EPISODE5_ID/preview" target="_blank">Episode 5</a>
-    <a href="https://drive.google.com/file/d/EPISODE6_ID/preview" target="_blank">Episode 6</a>
-    <a href="https://drive.google.com/file/d/EPISODE7_ID/preview" target="_blank">Episode 7</a>
-    <a href="https://drive.google.com/file/d/EPISODE8_ID/preview" target="_blank">Episode 8</a>
-    <a href="https://drive.google.com/file/d/EPISODE9_ID/preview" target="_blank">Episode 9</a>
-    <a href="https://drive.google.com/file/d/EPISODE10_ID/preview" target="_blank">Episode 10</a>
-    <a href="https://drive.google.com/file/d/EPISODE11_ID/preview" target="_blank">Episode 11</a>
-    <a href="https://drive.google.com/file/d/EPISODE12_ID/preview" target="_blank">Episode 12</a>
-    <a href="https://drive.google.com/file/d/EPISODE13_ID/preview" target="_blank">Episode 13</a>
-    <a href="https://drive.google.com/file/d/EPISODE14_ID/preview" target="_blank">Episode 14</a>
-    <a href="https://drive.google.com/file/d/EPISODE15_ID/preview" target="_blank">Episode 15</a>
-    <a href="https://drive.google.com/file/d/EPISODE16_ID/preview" target="_blank">Episode 16</a>
-    <a href="https://drive.google.com/file/d/EPISODE17_ID/preview" target="_blank">Episode 17</a>
-    <a href="https://drive.google.com/file/d/EPISODE18_ID/preview" target="_blank">Episode 18</a>
-    <a href="https://drive.google.com/file/d/EPISODE19_ID/preview" target="_blank">Episode 19</a>
-    <a href="https://drive.google.com/file/d/EPISODE20_ID/preview" target="_blank">Episode 20</a>
-    <a href="https://drive.google.com/file/d/EPISODE21_ID/preview" target="_blank">Episode 21</a>
-    <a href="https://drive.google.com/file/d/EPISODE22_ID/preview" target="_blank">Episode 22</a>
-    <a href="https://drive.google.com/file/d/EPISODE23_ID/preview" target="_blank">Episode 23</a>
-    <a href="https://drive.google.com/file/d/EPISODE24_ID/preview" target="_blank">Episode 24</a>
+  <div class="episode-list" id="episodeList">
+    <!-- Example SUB episodes; replace IDs with actual Google Drive preview IDs -->
+    <a data-src="https://drive.google.com/file/d/EPISODE1_ID/preview">Episode 1</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE2_ID/preview">Episode 2</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE3_ID/preview">Episode 3</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE4_ID/preview">Episode 4</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE5_ID/preview">Episode 5</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE6_ID/preview">Episode 6</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE7_ID/preview">Episode 7</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE8_ID/preview">Episode 8</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE9_ID/preview">Episode 9</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE10_ID/preview">Episode 10</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE11_ID/preview">Episode 11</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE12_ID/preview">Episode 12</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE13_ID/preview">Episode 13</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE14_ID/preview">Episode 14</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE15_ID/preview">Episode 15</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE16_ID/preview">Episode 16</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE17_ID/preview">Episode 17</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE18_ID/preview">Episode 18</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE19_ID/preview">Episode 19</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE20_ID/preview">Episode 20</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE21_ID/preview">Episode 21</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE22_ID/preview">Episode 22</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE23_ID/preview">Episode 23</a>
+    <a data-src="https://drive.google.com/file/d/EPISODE24_ID/preview">Episode 24</a>
   </div>
 
   <!-- Description -->
@@ -113,6 +114,35 @@
       <li>Director: Yasuhito Kikuchi / Atsushi Nakayama</li>
     </ul>
   </div>
+
+  <script>
+    // Change iframe src when episode clicked
+    const player = document.getElementById('player');
+    const episodes = document.querySelectorAll('.episode-list a');
+
+    episodes.forEach(ep => {
+      ep.addEventListener('click', (e) => {
+        e.preventDefault();
+        const src = ep.getAttribute('data-src');
+        player.src = src;
+        // Scroll to top of player
+        player.scrollIntoView({behavior: "smooth"});
+      });
+    });
+
+    // Optional: SUB/DUB button functionality
+    const subBtn = document.getElementById('subBtn');
+    const dubBtn = document.getElementById('dubBtn');
+
+    subBtn.addEventListener('click', () => {
+      // Replace episode list with SUB links (if different)
+      alert('SUB mode clicked - implement SUB links here!');
+    });
+
+    dubBtn.addEventListener('click', () => {
+      // Replace episode list with DUB links (if different)
+      alert('DUB mode clicked - implement DUB links here!');
+    });
+  </script>
 </body>
 </html>
-
