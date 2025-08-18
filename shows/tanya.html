@@ -1,1 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KONOSUBA - God's blessing on this wonderful world!</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  body {
+    font-family: "Segoe UI", Roboto, sans-serif;
+    background: #111;
+    color: #eee;
+  }
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+  }
+  .btn {
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.2s;
+  }
+  .btn:hover {
+    background: #666;
+    transform: scale(1.05);
+  }
+  .episode-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    margin: 30px auto;
+    max-width: 800px;
+    padding: 0 20px;
+  }
+  .episode-list a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background: #222;
+    color: #0af;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  .episode-list a:hover {
+    background: #333;
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+  <a href="../index.html" style="margin:20px;display:inline-block;color:#0af;">← Back</a>
+  <h1 style="text-align:center;">KONOSUBA - God's blessing on this wonderful world!</h1>
+
+   <!-- Player + GIF -->
+  <div style="position: relative; width: 800px; margin: 20px auto;">
+
+    <!-- Video player centered -->
+    <iframe id="player" 
+            src="https://drive.google.com/file/d/1vx1WqMViQmB216VnzBXHW0N2kGm2m2zY/preview" 
+            width="800" 
+            height="450" 
+            allow="autoplay; fullscreen" 
+            allowfullscreen
+            style="border:none; display:block; margin:0 auto;" 
+            title="Episode Player">
+    </iframe>
+
+    <!-- GIF on the left -->
+    <div style="position: absolute; left: -350px; top: 0; width: 300px; text-align: left;">
+      <a href="https://github.com/Ciscodcpy" target="_blank">
+        <img src="https://i.pinimg.com/736x/80/e5/9c/80e59cdfe8a69801b3bd5ef3d0573b91.jpg" alt="preview Image" style="width:100%; border-radius:10px; margin-bottom:15px;">
+      </a>
+
+      <a href="https://github.com/Ciscodcpy" target="_blank">
+        <img src="https://media.tenor.com/uCANUeyg0toAAAAM/mwah-miku.gif" alt="Miku Mwah GIF" style="width:100%; border-radius:10px; margin-bottom:15px;">
+      </a>
+
+      <h2 style="font-size:16px; margin:5px 0 0;">Enjoy free anime!</h2>
+      <p style="font-size:14px; margin:2px 0 0;">I made this website because I hate ads.</p>
+      <p style="font-size:14px; margin:2px 0 0;">Please enjoy no ads anime!.</p>
+      <p style="font-size:14px; margin:2px 0 0;">Let me know what shows I should add to the site!.</p>
+    </div>
+  </div>
+
+
+  <!-- Buttons -->
+  <div class="btn-container">
+    <button class="btn" id="subBtn">SUB(Cuming soon)</button>
+    <button class="btn" id="dubBtn">DUB</button>
+  </div>
+
+  <!-- Episode List -->
+  <h2 style="text-align:center;">Episodes</h2>
+  <div class="episode-list" id="episodeList">
+    <!-- SUB episodes -->
+  <a data-src="https://drive.google.com/file/d/1vx1WqMViQmB216VnzBXHW0N2kGm2m2zY/preview">Episode 1</a>
+  <a data-src="https://drive.google.com/file/d/1SsSg2iozXtf53A3xmDFBvEbTkrkZkvIY/preview">Episode 2</a>
+  <a data-src="https://drive.google.com/file/d/1BLes88mH9gQCPYbcpjdv5hmB-w1YYvBz/preview">Episode 3</a>
+  <a data-src="https://drive.google.com/file/d/12Xo_Ec57J4H0dIKWDvYHMqNMGI0XwLpT/preview">Episode 4</a>
+  <a data-src="https://drive.google.com/file/d/1gXciC0nET1QHtSJ75x6alvDDan5q3qBH/preview">Episode 5</a>
+  <a data-src="https://drive.google.com/file/d/1pzLBQJLGjt9oWziYxcN3bI8O0y5Adbpa/preview">Episode 6</a>
+  <a data-src="https://drive.google.com/file/d/1lafjrUfuzhhc002adlM3StPJLyeCVrLj/preview">Episode 7</a>
+  <a data-src="https://drive.google.com/file/d/1781arF1F42_e6Aa-I-tf9Gd5abB7rpg5/preview">Episode 8</a>
+  <a data-src="https://drive.google.com/file/d/1RNc3Kz-oD1uwb8XBOxpDXP5VQGuuiMIi/preview">Episode 9</a>
+  <a data-src="https://drive.google.com/file/d/17-nhnOCOmryu5aHEKjbLVPnaCJYVkOQu/preview">Episode 10</a>
+  <a data-src="https://drive.google.com/file/d/1fQkaUrVhQGLAMde5kVkSIiOJZ1w4jllS/preview">Episode 11</a>
+  <a data-src="https://drive.google.com/file/d/1TCJiYDF1zZgLAj_p2_PqJfuM24CCWVOq/preview">Episode 12</a>
+
+  <!-- Description -->
+  <div style="max-width:800px; margin:0 auto; padding:20px;">
+    <h2>Description</h2>
+    <p>The Saga of Tanya the Evil follows the rise of Tanya Degurechaff, a young girl with an extraordinary military career in a world where magic and warfare intertwine.
+      Reincarnated from a salaryman into this world by the mysterious "Being X," Tanya uses her ruthless intelligence and military prowess to climb the ranks of the Imperial Army. 
+      Despite her childlike appearance, she becomes a formidable force on the battlefield, mastering both strategic maneuvers and magical combat.</p>
+  </div>
+
+  <!-- Episode Switching Script -->
+  <script>
+    const player = document.getElementById('player');
+    const episodeLinks = document.querySelectorAll('.episode-list a');
+
+    episodeLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const src = link.getAttribute('data-src');
+        player.src = src;
+      });
+    });
+  </script>
+</body>
+</html>
+
 
