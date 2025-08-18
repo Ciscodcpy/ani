@@ -3,26 +3,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Movie 1</title>
+<title>That Time I Got Reincarnated as a Slime!</title>
 <link rel="stylesheet" href="../style.css">
+<style>
+  body {
+    font-family: "Segoe UI", Roboto, sans-serif;
+    background: #111;
+    color: #eee;
+  }
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+  }
+  .btn {
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.2s;
+  }
+  .btn:hover {
+    background: #666;
+    transform: scale(1.05);
+  }
+  .episode-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    margin: 30px auto;
+    max-width: 800px;
+    padding: 0 20px;
+  }
+  .episode-list a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background: #222;
+    color: #0af;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.2s;
+  }
+  .episode-list a:hover {
+    background: #333;
+    color: #fff;
+  }
+</style>
 </head>
 <body>
   <a href="../index.html" style="margin:20px;display:inline-block;color:#0af;">← Back</a>
   <h1 style="text-align:center;">That Time I Got Reincarnated as a Slime!</h1>
+
+  <!-- Video player -->
   <div style="display:flex; justify-content:center; margin:20px;">
     <iframe src="https://drive.google.com/file/d/YOUR_FILE_ID/preview" 
-            width="800" height="450" allow="autoplay" style="border:none;"></iframe>
+            width="800" height="450" allow="autoplay" style="border:none;" title="Episode Player"></iframe>
   </div>
+
+  <!-- Buttons -->
+  <div class="btn-container">
+    <button class="btn">SUB</button>
+    <button class="btn">DUB</button>
+  </div>
+
+  <!-- Episode List -->
+  <h2 style="text-align:center;">Episodes</h2>
+  <div class="episode-list">
+    <!-- Replace EPISODE_LINK_HERE with Google Drive preview links -->
+    <a href="https://drive.google.com/file/d/EPISODE1_ID/preview" target="_blank">Episode 1</a>
+    <a href="https://drive.google.com/file/d/EPISODE2_ID/preview" target="_blank">Episode 2</a>
+    <a href="https://drive.google.com/file/d/EPISODE3_ID/preview" target="_blank">Episode 3</a>
+    <a href="https://drive.google.com/file/d/EPISODE4_ID/preview" target="_blank">Episode 4</a>
+    <a href="https://drive.google.com/file/d/EPISODE5_ID/preview" target="_blank">Episode 5</a>
+    <a href="https://drive.google.com/file/d/EPISODE6_ID/preview" target="_blank">Episode 6</a>
+    <a href="https://drive.google.com/file/d/EPISODE7_ID/preview" target="_blank">Episode 7</a>
+    <a href="https://drive.google.com/file/d/EPISODE8_ID/preview" target="_blank">Episode 8</a>
+    <a href="https://drive.google.com/file/d/EPISODE9_ID/preview" target="_blank">Episode 9</a>
+    <a href="https://drive.google.com/file/d/EPISODE10_ID/preview" target="_blank">Episode 10</a>
+    <a href="https://drive.google.com/file/d/EPISODE11_ID/preview" target="_blank">Episode 11</a>
+    <a href="https://drive.google.com/file/d/EPISODE12_ID/preview" target="_blank">Episode 12</a>
+    <a href="https://drive.google.com/file/d/EPISODE13_ID/preview" target="_blank">Episode 13</a>
+    <a href="https://drive.google.com/file/d/EPISODE14_ID/preview" target="_blank">Episode 14</a>
+    <a href="https://drive.google.com/file/d/EPISODE15_ID/preview" target="_blank">Episode 15</a>
+    <a href="https://drive.google.com/file/d/EPISODE16_ID/preview" target="_blank">Episode 16</a>
+    <a href="https://drive.google.com/file/d/EPISODE17_ID/preview" target="_blank">Episode 17</a>
+    <a href="https://drive.google.com/file/d/EPISODE18_ID/preview" target="_blank">Episode 18</a>
+    <a href="https://drive.google.com/file/d/EPISODE19_ID/preview" target="_blank">Episode 19</a>
+    <a href="https://drive.google.com/file/d/EPISODE20_ID/preview" target="_blank">Episode 20</a>
+    <a href="https://drive.google.com/file/d/EPISODE21_ID/preview" target="_blank">Episode 21</a>
+    <a href="https://drive.google.com/file/d/EPISODE22_ID/preview" target="_blank">Episode 22</a>
+    <a href="https://drive.google.com/file/d/EPISODE23_ID/preview" target="_blank">Episode 23</a>
+    <a href="https://drive.google.com/file/d/EPISODE24_ID/preview" target="_blank">Episode 24</a>
+  </div>
+
+  <!-- Description -->
   <div style="max-width:800px; margin:0 auto; padding:20px;">
     <h2>Description</h2>
     <p>Lonely thirty-seven-year-old Satoru Mikami is stuck in a dead-end job, unhappy with his mundane life, but after dying at the hands of a robber, they awaken to a fresh start in a fantasy realm... as a slime!</p>
     <p>As Rimuru acclimates to their new, goopy, existence, their exploits with the other monsters set off a chain of events that will change the world forever!</p>
     <ul>
       <li>Genre: Action</li>
-      <li>Year: 2013-2024</li>
-      <li>Director: whos gives a shit its PEAK!</li>
+      <li>Year: 2018 – ongoing</li>
+      <li>Director: Yasuhito Kikuchi / Atsushi Nakayama</li>
     </ul>
   </div>
 </body>
-
 </html>
+
