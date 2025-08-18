@@ -1,102 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KONOSUBA -God's blessing on this wonderful world!</title>
-  <style>
-    body {
-      font-family: "Segoe UI", Roboto, sans-serif;
-      background: #111;
-      color: #eee;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      height: 100vh;
-      padding: 20px;
-    }
-    .video-wrapper {
-      position: relative;
-      width: 800px;
-      height: 450px;
-    }
-    .video-wrapper iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    .gif-wrapper {
-      position: absolute;
-      left: -330px;
-      top: 0;
-      width: 300px;
-      text-align: left;
-    }
-    .gif-wrapper img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .gif-wrapper h2,
-    .gif-wrapper p {
-      font-size: 16px;
-      margin: 5px 0;
-    }
-    .episode-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-      gap: 10px;
-      margin: 30px auto;
-      max-width: 800px;
-      padding: 0 20px;
-    }
-    .episode-list a {
-      display: block;
-      text-align: center;
-      padding: 10px;
-      background: #222;
-      color: #0af;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: 0.2s;
-      cursor: pointer;
-    }
-    .episode-list a:hover {
-      background: #333;
-      color: #fff;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>That Time I Got Reincarnated as a Slime!</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  body {
+    font-family: "Segoe UI", Roboto, sans-serif;
+    background: #111;
+    color: #eee;
+  }
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+  }
+  .btn {
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.2s;
+  }
+  .btn:hover {
+    background: #666;
+    transform: scale(1.05);
+  }
+  .episode-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    margin: 30px auto;
+    max-width: 800px;
+    padding: 0 20px;
+  }
+  .episode-list a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background: #222;
+    color: #0af;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  .episode-list a:hover {
+    background: #333;
+    color: #fff;
+  }
+</style>
 </head>
 <body>
   <a href="../index.html" style="margin:20px;display:inline-block;color:#0af;">← Back</a>
-  <h1 style="text-align:center;">KONOSUBA -God's blessing on this wonderful world!</h1>
+  <h1 style="text-align:center;">That Time I Got Reincarnated as a Slime!</h1>
 
-  <div class="container">
-    <div class="video-wrapper">
-      <iframe id="player" src="https://i.pinimg.com/736x/95/ad/ec/95adec2e53d92c5ac6ab523de0f4230e.jpg" allow="autoplay" title="Episode Player"></iframe>
-      <div class="gif-wrapper">
-       
-          <img src="https://i.pinimg.com/1200x/a6/54/db/a654dbfdf0d6a3b04d00d106f40bdb88.jpg" alt="Miku Mwah GIF">
-          <img src="https://media.tenor.com/uCANUeyg0toAAAAM/mwah-miku.gif" alt="Miku Mwah GIF">
-        </a>
-        <h2>Enjoy free anime!</h2>
-        <p>I made this website because I hate ads.</p>
-        <p>Please enjoy no ads and anime!</p>
-        <p>Let me know what shows I should add to the site!</p>
-      </div>
+  <!-- Player + GIF -->
+  <div style="position: relative; width: 800px; margin: 20px auto;">
+
+    <!-- Video player centered -->
+    <iframe id="player" 
+            src="https://drive.google.com/file/d/1a7BUqN7VwJWEwCPLCSRMMev1hgZnZg6O/preview" 
+            width="800" 
+            height="450" 
+            allow="autoplay; fullscreen" 
+            allowfullscreen
+            style="border:none; display:block; margin:0 auto;" 
+            title="Episode Player">
+    </iframe>
+
+    <!-- GIF on the left -->
+    <div style="position: absolute; left: -350px; top: 0; width: 300px; text-align: left;">
+      <a href="https://github.com/Ciscodcpy" target="_blank">
+        <img src="https://i.pinimg.com/1200x/1d/12/fe/1d12fe7de62c4cc68d0991745777fe04.jpg" alt="Miku Image" style="width:100%; border-radius:10px; margin-bottom:15px;">
+      </a>
+
+      <a href="https://itunes.apple.com/app/apple-store/id917932200?pt=39040802&ct=Media1GIFV2&mt=8" target="_blank">
+        <img src="https://media.tenor.com/uCANUeyg0toAAAAM/mwah-miku.gif" alt="Miku Mwah GIF" style="width:100%; border-radius:10px; margin-bottom:15px;">
+      </a>
+
+      <h2 style="font-size:16px; margin:5px 0 0;">Enjoy free anime!</h2>
+      <p style="font-size:14px; margin:2px 0 0;">I made this website because I hate ads.</p>
+      <p style="font-size:14px; margin:2px 0 0;">Please enjoy no ads anime!.</p>
+      <p style="font-size:14px; margin:2px 0 0;">Let me know what shows I should add to the site!.</p>
     </div>
   </div>
-    <!-- Buttons -->
+
+  <!-- Buttons -->
   <div class="btn-container">
     <button class="btn" id="subBtn">SUB</button>
     <button class="btn" id="dubBtn">DUB</button>
   </div>
 
-  <div class="episode-list">
+  <!-- Episode List -->
+  <h2 style="text-align:center;">Episodes</h2>
+  <div class="episode-list" id="episodeList">
+
+    <!-- SUB episodes by default -->
     <a data-src="https://drive.google.com/file/d/1rUvtUt82kV4eTZrQNw6MZ3GaCzctdMM7/preview">Episode 1</a>
     <a data-src="https://drive.google.com/file/d/1dtvSyYyS6wxAJ2Eyryb9BGJTgp1zimnM/preview">Episode 2</a>
     <a data-src="https://drive.google.com/file/d/1SOolaY-MHsmsvEjT8ioYbA-hZ1bYRyqM/preview">Episode 3</a>
@@ -109,20 +115,12 @@
     <a data-src="https://drive.google.com/file/d/1NtQgPR2ANmNvQGD0dfkXmgzQiO87qrQL/preview">Episode 10</a>
   </div>
 
-<!-- Description -->
-<div style="max-width:800px; margin:0 auto; padding:20px; text-align:center;">
-  <h2>Description</h2>
-<p>Following an untimely and embarrassing death, Kazuma Satou, a Japanese teenage shut-in NEET, meets a goddess named Aqua, who offers to reincarnate him in a parallel world with MMORPG elements, where he can go on adventures and battle monsters.</p>
-  <p>Despite being offered a superpowered item or ability to use in this new world, Kazuma, following some provocation, chooses Aqua herself to accompany him to the town of Axel, quickly finding her absent-mindedness to be less than beneficial.</p>
-  <p>With Aqua unable to return to the afterlife until the Devil King is defeated, the two form a party and recruit two other members: an explosion-obsessed magician named Megumin and a masochistic crusader named Darkness.</p>
-  <p>Due to the party's dysfunctional abilities, Kazuma quickly gives up on the idea of defeating the Devil King and tries to live a comfortable lifestyle, only to find the circumstances of his daily life are forcing him and his party to encounter and battle the Devil King's generals.</p>
-  <ul style="list-style-position: inside; display: inline-block; text-align: left;">
-    <li>Genre: Action</li>
-    <li>Year: Fuck if i know</li>
-    <li>Director: Yasuhito Kikuchi / Atsushi Nakayama</li>
-  </ul>
-</div>
-  
-</body>
-</html>
-
+  <!-- Description -->
+  <div style="max-width:800px; margin:0 auto; padding:20px;">
+    <h2>Description</h2>
+    <p>Lonely thirty-seven-year-old Satoru Mikami is stuck in a dead-end job, unhappy with his mundane life, but after dying at the hands of a robber, they awaken to a fresh start in a fantasy realm... as a slime!</p>
+    <p>As Rimuru acclimates to their new, goopy, existence, their exploits with the other monsters set off a chain of events that will change the world forever!</p>
+    <ul>
+      <li>Genre: Action</li>
+      <li>Year: 2018 – ongoing</li>
+      <li>Director:
