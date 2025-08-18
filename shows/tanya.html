@@ -11,12 +11,14 @@
     background: #111;
     color: #eee;
   }
+
   .btn-container {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin: 20px 0;
   }
+
   .btn {
     background: #444;
     color: white;
@@ -28,18 +30,22 @@
     font-weight: 600;
     transition: 0.2s;
   }
+
   .btn:hover {
     background: #666;
     transform: scale(1.05);
   }
+
   .episode-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    justify-content: center; /* centers the grid */
     gap: 10px;
     margin: 30px auto;
     max-width: 800px;
     padding: 0 20px;
   }
+
   .episode-list a {
     display: block;
     text-align: center;
@@ -51,6 +57,7 @@
     transition: 0.2s;
     cursor: pointer;
   }
+
   .episode-list a:hover {
     background: #333;
     color: #fff;
