@@ -61,10 +61,8 @@
   <a href="../index.html" style="margin:20px;display:inline-block;color:#0af;">← Back</a>
   <h1 style="text-align:center;">KONOSUBA - God's blessing on this wonderful world!</h1>
 
-  <!-- Player + GIF -->
+  <!-- Player -->
   <div style="position: relative; width: 800px; margin: 20px auto;">
-
-    <!-- Video player centered -->
     <iframe id="player" 
             src="https://drive.google.com/file/d/1uw8XoyElDvdXh8J0x4X-38TbNJ25uayg/preview" 
             width="800" 
@@ -74,22 +72,6 @@
             style="border:none; display:block; margin:0 auto;" 
             title="Episode Player">
     </iframe>
-
-    <!-- GIF on the left -->
-    <div style="position: absolute; left: -350px; top: 0; width: 300px; text-align: left;">
-      <a href="https://github.com/Ciscodcpy" target="_blank">
-        <img src="https://i.pinimg.com/1200x/a6/54/db/a654dbfdf0d6a3b04d00d106f40bdb88.jpg" alt="Miku Image" style="width:100%; border-radius:10px; margin-bottom:15px;">
-      </a>
-
-      <a href="https://github.com/Ciscodcpy" target="_blank">
-        <img src="https://media.tenor.com/uCANUeyg0toAAAAM/mwah-miku.gif" alt="Miku Mwah GIF" style="width:100%; border-radius:10px; margin-bottom:15px;">
-      </a>
-
-      <h2 style="font-size:16px; margin:5px 0 0;">Enjoy free anime!</h2>
-      <p style="font-size:14px; margin:2px 0 0;">I made this website because I hate ads.</p>
-      <p style="font-size:14px; margin:2px 0 0;">Please enjoy no ads anime!.</p>
-      <p style="font-size:14px; margin:2px 0 0;">Let me know what shows I should add to the site!.</p>
-    </div>
   </div>
 
   <!-- Buttons -->
@@ -101,27 +83,32 @@
   <!-- Episode List -->
   <h2 style="text-align:center;">Episodes</h2>
   <div class="episode-list" id="episodeList">
-
-    <!-- SUB episodes by default -->
+    <!-- SUB episodes -->
     <a data-src="https://drive.google.com/file/d/1rUvtUt82kV4eTZrQNw6MZ3GaCzctdMM7/preview">Episode 1</a>
     <a data-src="https://drive.google.com/file/d/1dtvSyYyS6wxAJ2Eyryb9BGJTgp1zimnM/preview">Episode 2</a>
     <a data-src="https://drive.google.com/file/d/1SOolaY-MHsmsvEjT8ioYbA-hZ1bYRyqM/preview">Episode 3</a>
     <a data-src="https://drive.google.com/file/d/1ow5BI7QyRvgFLyE_rDiF0dfBavuEdu4i/preview">Episode 4</a>
     <a data-src="https://drive.google.com/file/d/1-1fcSy6NRyZdoJieTB2LV22SoM-m_N8T/preview">Episode 5</a>
-    <a data-src="https://drive.google.com/file/d/1MMEFz6y3iJN3KflWeqsi1TEyCHzCC_eS/preview">Episode 6</a>
-    <a data-src="https://drive.google.com/file/d/13dmnJoi9Q7vXPyoUYNHiJ-kUMm7XuPu5/preview">Episode 7</a>
-    <a data-src="https://drive.google.com/file/d/17IGZ1bHfLC42sjG9GrYcpEbTR3bCTAsu/preview">Episode 8</a>
-    <a data-src="https://drive.google.com/file/d/1uw8XoyElDvdXh8J0x4X-38TbNJ25uayg/preview">Episode 9</a>
-    <a data-src="https://drive.google.com/file/d/1NtQgPR2ANmNvQGD0dfkXmgzQiO87qrQL/preview">Episode 10</a>
   </div>
 
   <!-- Description -->
   <div style="max-width:800px; margin:0 auto; padding:20px;">
     <h2>Description</h2>
-    <p>Lonely thirty-seven-year-old Satoru Mikami is stuck in a dead-end job, unhappy with his mundane life, but after dying at the hands of a robber, they awaken to a fresh start in a fantasy realm... as a slime!</p>
-    <p>As Rimuru acclimates to their new, goopy, existence, their exploits with the other monsters set off a chain of events that will change the world forever!</p>
-    <ul>
-      <li>Genre: Action</li>
-      <li>Year: 2018 – ongoing</li>
-      <li>Director:
+    <p>KONOSUBA is a comedic fantasy series following Kazuma Satou after he dies and is reincarnated in a fantasy world. Chaos, laughs, and adventures ensue with his party of oddball companions!</p>
+  </div>
 
+  <!-- Episode Switching Script -->
+  <script>
+    const player = document.getElementById('player');
+    const episodeLinks = document.querySelectorAll('.episode-list a');
+
+    episodeLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const src = link.getAttribute('data-src');
+        player.src = src;
+      });
+    });
+  </script>
+</body>
+</html>
