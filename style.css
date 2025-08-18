@@ -56,10 +56,10 @@ body::-webkit-scrollbar-thumb { background-color: #444; border-radius: 4px; }
   pointer-events: none;
   z-index: 2;
   background: 
-    linear-gradient(to top, #121212 0%, transparent 15%),
-    linear-gradient(to bottom, #121212 0%, transparent 15%),
-    linear-gradient(to left, #121212 0%, transparent 10%),
-    linear-gradient(to right, #121212 0%, transparent 10%);
+    linear-gradient(to top, #1e1e1e 0%, transparent 15%),
+    linear-gradient(to bottom, #1e1e1e 0%, transparent 15%),
+    linear-gradient(to left, #1e1e1e 0%, transparent 10%),
+    linear-gradient(to right, #1e1e1e 0%, transparent 10%);
   background-blend-mode: overlay;
 }
 
@@ -123,4 +123,5 @@ body::-webkit-scrollbar-thumb { background-color: #444; border-radius: 4px; }
   .movie-card { width: 120px; }
   .btn { padding: 0.6rem 1.5rem; font-size: 0.9rem; }
 }
+
 
