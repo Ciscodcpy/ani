@@ -60,12 +60,34 @@
 <body>
   <a href="../index.html" style="margin:20px;display:inline-block;color:#0af;">← Back</a>
   <h1 style="text-align:center;">That Time I Got Reincarnated as a Slime!</h1>
+   <!-- side left bar -->
+  
 
-  <!-- Video player -->
-  <div style="display:flex; justify-content:center; margin:20px;">
-    <iframe id="player" src="https://drive.google.com/file/d/YOUR_FILE_ID/preview" 
-            width="800" height="450" allow="autoplay" style="border:none;" title="Episode Player"></iframe>
+
+  
+
+<div style="position: relative; width: 800px; margin: 20px auto;">
+
+  <!-- Video player centered -->
+  <iframe id="player" src="https://drive.google.com/file/d/YOUR_FILE_ID/preview"
+          width="800" height="450" allow="autoplay" style="border:none; display:block; margin:0 auto;" title="Episode Player"></iframe>
+
+  <!-- GIF on the left -->
+  <div style="position: absolute; left: -350px; top: 0; width: 300px; text-align: left;">
+    <a href="https://github.com/Ciscodcpy" target="_blank">
+      <img src="https://media.tenor.com/uCANUeyg0toAAAAM/mwah-miku.gif" alt="Miku Mwah GIF" style="width:100%; border-radius:10px;">
+    </a>
+    <h2 style="font-size:16px; margin:px 0 0;">    Enjoy free anime!</h2>
+    <p style="font-size:14px; margin:2px 0 0;">I made this website because I hate ads.</p>
+    <p style="font-size:14px; margin:2px 0 0;">I Please enjpy no ads an anime!.</p>
+    <p style="font-size:14px; margin:2px 0 0;">I let me know what shows i should add to the site!.</p>
+    
   </div>
+
+</div>
+
+  
+  
 
   <!-- Buttons -->
   <div class="btn-container">
@@ -73,13 +95,12 @@
     <button class="btn" id="dubBtn">DUB</button>
     
   </div>
-  <!-- side left bar -->
-  <h2 style="text-align:left;">      Enjoy free anime!</h2>
-  <a style="text-align:left;">i made this website because i hate ads</a>
+
+  
+ 
 
   <!-- Episode List -->
   <h2 style="text-align:center;">Episodes</h2>
-  <h2 style="text-align:left;">Episodes</h2>
   
 <div class="episode-list">
   <!-- Example SUB episodes; replace IDs with actual Google Drive preview IDs -->
@@ -152,8 +173,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
