@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberPunk: Edge Runners</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  body {
+    font-family: "Segoe UI", Roboto, sans-serif;
+    background: #111;
+    color: #eee;
+  }
 
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+  }
+
+  .btn {
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.2s;
+  }
+
+  .btn:hover {
+    background: #666;
+    transform: scale(1.05);
+  }
+
+  .episode-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    justify-content: center; /* centers the grid */
+    gap: 10px;
+    margin: 30px auto;
+    max-width: 800px;
+    padding: 0 20px;
+  }
+
+  .episode-list a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background: #222;
+    color: #0af;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+
+  .episode-list a:hover {
+    background: #333;
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+  <a href="../index.html" style="margin:20px;display:inline-block;color:#0af;">← Back</a>
+  <h1 style="text-align:center;">CyberPunk: Edge Runners</h1>
+
+   <!-- Player + GIF -->
+  <div style="position: relative; width: 800px; margin: 20px auto;">
+
+    <!-- Video player centered -->
+    <iframe id="player" 
+            src="https://i.pinimg.com/736x/a6/81/b1/a681b190ce98257cdbacd55d5af4055e.jpg" 
+            width="800" 
+            height="450" 
+            allow="autoplay; fullscreen" 
+            allowfullscreen
+            style="border:none; display:block; margin:0 auto;" 
+            title="Episode Player">
+    </iframe>
+
+    <!-- GIF on the left -->
+    <div style="position: absolute; left: -350px; top: 0; width: 300px; text-align: left;">
+      <a href="https://github.com/Ciscodcpy" target="_blank">
+        <img src="https://i.pinimg.com/1200x/1c/d8/34/1cd834c31f457a4bc9431a365c5bcf66.jpg" alt="preview Image" style="width:100%; border-radius:10px; margin-bottom:15px;">
+      </a>
+
+      <a href="https://github.com/Ciscodcpy" target="_blank">
+        <img src="https://media.tenor.com/uCANUeyg0toAAAAM/mwah-miku.gif" alt="Miku Mwah GIF" style="width:100%; border-radius:10px; margin-bottom:15px;">
+      </a>
+
+      <h2 style="font-size:16px; margin:5px 0 0;">Enjoy free anime!</h2>
+      <p style="font-size:14px; margin:2px 0 0;">I made this website because I hate ads.</p>
+      <p style="font-size:14px; margin:2px 0 0;">Please enjoy no ads anime!.</p>
+      <p style="font-size:14px; margin:2px 0 0;">Let me know what shows I should add to the site!.</p>
+    </div>
+  </div>
+
+
+  <!-- Buttons -->
+  <div class="btn-container">
+    <button class="btn" id="subBtn">SUB(Cuming soon)</button>
+    <button class="btn" id="dubBtn">DUB</button>
+  </div>
+
+  <!-- Episode List -->
+  <h2 style="text-align:center;">Episodes</h2>
+  <div class="episode-list" id="episodeList">
+    <!-- SUB episodes -->
+  <a data-src="">Episode 1</a>
+  <a data-src="">Episode 2</a>
+  <a data-src="">Episode 3</a>
+  <a data-src="">Episode 4</a>
+  <a data-src="">Episode 5</a>
+  <a data-src="">Episode 6</a>
+  <a data-src="">Episode 7</a>
+  <a data-src="">Episode 8</a>
+  <a data-src="">Episode 9</a>
+  <a data-src="">Episode 10</a>
+  <a data-src="">Episode 11</a>
+  <a data-src="">Episode 12</a>
+  
+
+  <!-- Description -->
+  <div style="max-width:800px; margin:0 auto; padding:20px;">
+<h2>Description</h2>
+  <p>In a dystopia overrun by corruption, crime, and cybernetic implants, an impulsive but talented street kid named <strong>David Martinez</strong>,
+    after losing everything he has in a drive-by shooting, chooses to survive on the wrong side of the law as an <em>"edgerunner"</em>: 
+    a high-tech, black-market mercenary also known as a <em>"cyberpunk"</em>.</p>
+  </div>
+
+  <!-- Episode Switching Script -->
+  <script>
+    const player = document.getElementById('player');
+    const episodeLinks = document.querySelectorAll('.episode-list a');
+
+    episodeLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const src = link.getAttribute('data-src');
+        player.src = src;
+      });
+    });
+  </script>
+</body>
+</html>
