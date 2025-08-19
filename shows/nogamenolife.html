@@ -1,1 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>No Game No Life</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  body {
+    font-family: "Segoe UI", Roboto, sans-serif;
+    background: #111;
+    color: #eee;
+  }
 
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+  }
+
+  .btn {
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.2s;
+  }
+
+  .btn:hover {
+    background: #666;
+    transform: scale(1.05);
+  }
+
+  .episode-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    justify-content: center; /* centers the grid */
+    gap: 10px;
+    margin: 30px auto;
+    max-width: 800px;
+    padding: 0 20px;
+  }
+
+  .episode-list a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background: #222;
+    color: #0af;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+
+  .episode-list a:hover {
+    background: #333;
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+  <a href="../index.html" style="margin:20px;display:inline-block;color:#0af;">← Back</a>
+  <h1 style="text-align:center;">No Game No Life</h1>
+
+   <!-- Player + GIF -->
+  <div style="position: relative; width: 800px; margin: 20px auto;">
+
+    <!-- Video player centered -->
+    <iframe id="player" 
+            src="https://drive.google.com/file/d/1vx1WqMViQmB216VnzBXHW0N2kGm2m2zY/preview" 
+            width="800" 
+            height="450" 
+            allow="autoplay; fullscreen" 
+            allowfullscreen
+            style="border:none; display:block; margin:0 auto;" 
+            title="Episode Player">
+    </iframe>
+
+    <!-- GIF on the left -->
+    <div style="position: absolute; left: -350px; top: 0; width: 300px; text-align: left;">
+      <a href="https://github.com/Ciscodcpy" target="_blank">
+        <img src="https://i.pinimg.com/736x/57/53/7d/57537d50feb71039c419ba6314041f4d.jpg" alt="preview Image" style="width:100%; border-radius:10px; margin-bottom:15px;">
+      </a>
+
+      <a href="https://github.com/Ciscodcpy" target="_blank">
+        <img src="https://media.tenor.com/uCANUeyg0toAAAAM/mwah-miku.gif" alt="Miku Mwah GIF" style="width:100%; border-radius:10px; margin-bottom:15px;">
+      </a>
+
+      <h2 style="font-size:16px; margin:5px 0 0;">Enjoy free anime!</h2>
+      <p style="font-size:14px; margin:2px 0 0;">I made this website because I hate ads.</p>
+      <p style="font-size:14px; margin:2px 0 0;">Please enjoy no ads anime!.</p>
+      <p style="font-size:14px; margin:2px 0 0;">Let me know what shows I should add to the site!.</p>
+    </div>
+  </div>
+
+
+  <!-- Buttons -->
+  <div class="btn-container">
+    <button class="btn" id="subBtn">SUB(Cuming soon)</button>
+    <button class="btn" id="dubBtn">DUB</button>
+  </div>
+
+  <!-- Episode List -->
+  <h2 style="text-align:center;">Episodes</h2>
+  <div class="episode-list" id="episodeList">
+    <!-- SUB episodes -->
+  <a data-src="https://drive.google.com/file/d/1anob3r1_7oc3Mj-C1tmY4UcsFk9OK4Ch/preview">Episode 1</a>
+  <a data-src="https://drive.google.com/file/d/1RTjat-14PwLNGBb4IYZnSxXSF5AebIsO/preview">Episode 2</a>
+  <a data-src="https://drive.google.com/file/d/1m5X3PI1T_dOxO5LfQMT1CocWnvu0HOh5/preview">Episode 3</a>
+  <a data-src="https://drive.google.com/file/d/1PEqd1Rp_yrvPgWyXgxG3Quf8a4yJXIo5/preview">Episode 4</a>
+  <a data-src="">Episode 5</a>
+  <a data-src="https://drive.google.com/file/d/1-G27avLJPBhdqG6uiYlXWsej8JIFAlRl/preview">Episode 6</a>
+  <a data-src="https://drive.google.com/file/d/1euv6DOZmpQ058lj23osx0ZaO0TQ0JJEZ/preview">Episode 7</a>
+  <a data-src="https://drive.google.com/file/d/1vzlJnj88As4iwLDXVuK8islfjPyq_vlm/preview">Episode 8</a>
+  <a data-src="">Episode 9</a>
+  <a data-src="https://drive.google.com/file/d/1LU-OEIMLnfkSEl39JKQfDqHbxI28CaBx/preview">Episode 10</a>
+  <a data-src="https://drive.google.com/file/d/1bABil5ldxkVsuQDCcOGIDuhHUaKw0Moj/preview">Episode 11</a>
+  <a data-src="https://drive.google.com/file/d/1J78R0hMmDW8OuHVfPOmn6_oCrzEwhyhG/preview">Episode 12</a>
+  
+
+  <!-- Description -->
+  <div style="max-width:800px; margin:0 auto; padding:20px;">
+<h2>Description</h2>
+<p>
+  Sora and Shiro are two hikikomori stepsiblings who are known in the online gaming world as <strong>Blank</strong>, 
+  an undefeated group of gamers. One day, they are challenged to a game of chess by <strong>Tet</strong>, a god from 
+  another reality. The two are victorious and are offered to live in a world that centers around games. They accept, 
+  believing it to be a joke, and are summoned to a reality known as <em>Disboard</em>.<sup>[Jp. 1]</sup> There, a spell 
+  known as the <strong>Ten Covenants</strong> prevents the citizens of Disboard from inflicting harm on one another, 
+  forcing them to resolve their differences by gambling with games whose rules and rewards are magically enforced. 
+  In-game, rule enforcement only occurs when the method of cheating is acknowledged and outed by the opponent, allowing 
+  players to cheat through discreet methods.
+</p>
+  </div>
+
+  <!-- Episode Switching Script -->
+  <script>
+    const player = document.getElementById('player');
+    const episodeLinks = document.querySelectorAll('.episode-list a');
+
+    episodeLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const src = link.getAttribute('data-src');
+        player.src = src;
+      });
+    });
+  </script>
+</body>
+</html>
