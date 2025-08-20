@@ -130,56 +130,58 @@
   </section>
 <!-- Favorites Row -->
 <section style="display:flex; gap:20px; margin:20px;">
-  <div class="about-box">
+
+  <!-- About Box -->
+  <div class="about-box" style="flex:0 0 200px; background:rgba(18,18,18,0.9); padding:15px; border-radius:12px; color:#fff;">
     <h3>About This Project</h3>
-    <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/thumbnails/casty.png" alt="Miku GIF">
+    <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/thumbnails/casty.png" alt="Miku GIF" style="width:100%; border-radius:10px; margin-bottom:10px;">
     <p>This is a curated collection of anime series I have observed and critically enjoyed. Contact via Instagram or Discord: <strong>#chickenmaaster#6838</strong>.</p>
   </div>
 
-<div style="flex:1;">
-  <h2>Casty's Favorite Isekai's</h2>
-  <div class="row-container">
-    <a href="shows/movie1.html" class="movie-card">
-      <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/thumbnails/slimesan.jpg" alt="Movie 1">
-      <div class="title-box">That Time I Got Reincarnated as a Slime!</div>
-    </a>
-    <a href="shows/movie2.html" class="movie-card">
-      <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/thumbnails/konosuba.jpg" alt="Movie 2">
-      <div class="title-box">KonoSuba: God's Blessing on This Wonderful World</div>
-    </a>
-    <a href="shows/tanya.html" class="movie-card">
-      <img src="https://i.pinimg.com/736x/69/92/09/6992099f0c8327b6d934f4ba17a127c4.jpg" alt="Movie 3">
-      <div class="title-box">Saga of Tanya the Evil</div>
-    </a>
-    <a href="shows/nogamenolife.html" class="movie-card">
-      <img src="https://i.pinimg.com/736x/36/39/f9/3639f99e1565b8c3ae434434e0a1e45b.jpg" alt="Movie 4">
-      <div class="title-box">No Game No Life</div>
-    </a>
+  <!-- Favorite Isekai Movies -->
+  <div style="flex:1;">
+    <h2>Casty's Favorite Isekai's</h2>
+    <div class="row-container">
+      <a href="shows/movie1.html" class="movie-card">
+        <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/thumbnails/slimesan.jpg" alt="Movie 1">
+        <div class="title-box">That Time I Got Reincarnated as a Slime!</div>
+      </a>
+      <a href="shows/movie2.html" class="movie-card">
+        <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/thumbnails/konosuba.jpg" alt="Movie 2">
+        <div class="title-box">KonoSuba: God's Blessing on This Wonderful World</div>
+      </a>
+      <a href="shows/tanya.html" class="movie-card">
+        <img src="https://i.pinimg.com/736x/69/92/09/6992099f0c8327b6d934f4ba17a127c4.jpg" alt="Movie 3">
+        <div class="title-box">Saga of Tanya the Evil</div>
+      </a>
+      <a href="shows/nogamenolife.html" class="movie-card">
+        <img src="https://i.pinimg.com/736x/36/39/f9/3639f99e1565b8c3ae434434e0a1e45b.jpg" alt="Movie 4">
+        <div class="title-box">No Game No Life</div>
+      </a>
+    </div>
   </div>
-</div>
+
+</section>
 
 <!-- Recommended Section -->
-  <section class="section-container">
-    <h2>Casty's Recommended</h2>
-    <div class="row-container">
-      <div class="movie-card">
-        <a href="shows/cyberpunk.html"><img src="https://i.pinimg.com/1200x/1c/d8/34/1cd834c31f457a4bc9431a365c5bcf66.jpg" alt="Cyberpunk">
-          <div class="title-box">CyberPunk: Edge Runners</div>
-        </a>
-      </div>
-      <div class="movie-card">
-        <a href="shows/overlord.html"><img src="https://i.pinimg.com/originals/aa/91/64/aa91646c6bfffa8cfb0f5c1b00fae44d.jpg" alt="Overlord">
-          <div class="title-box">Overlord</div>
-        </a>
-      </div>
-      <div class="movie-card">
-        <a href="shows/rezero.html"><img src="https://i.pinimg.com/originals/1e/7a/aa/1e7aaa78b2dfef6b2c0c81e7f3c8e22c.jpg" alt="Re:Zero">
-          <div class="title-box">Re:Zero</div>
-        </a>
-      </div>
-      <!-- Add more recommended movie cards here -->
-    </div>
-  </section>
+<section class="section-container" style="margin:20px 20px 40px 20px;">
+  <h2>Casty's Recommended</h2>
+  <div class="row-container">
+    <a href="shows/cyberpunk.html" class="movie-card">
+      <img src="https://i.pinimg.com/1200x/1c/d8/34/1cd834c31f457a4bc9431a365c5bcf66.jpg" alt="Cyberpunk">
+      <div class="title-box">CyberPunk: Edge Runners</div>
+    </a>
+    <a href="shows/overlord.html" class="movie-card">
+      <img src="https://i.pinimg.com/originals/aa/91/64/aa91646c6bfffa8cfb0f5c1b00fae44d.jpg" alt="Overlord">
+      <div class="title-box">Overlord</div>
+    </a>
+    <a href="shows/rezero.html" class="movie-card">
+      <img src="https://i.pinimg.com/originals/1e/7a/aa/1e7aaa78b2dfef6b2c0c81e7f3c8e22c.jpg" alt="Re:Zero">
+      <div class="title-box">Re:Zero</div>
+    </a>
+    <!-- Add more recommended movie cards here -->
+  </div>
+</section>
 
 <script>
 const slides = document.querySelectorAll('.slide');
