@@ -6,191 +6,214 @@
 <title>Casty Anime WRLD</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: #111;
-    color: #eee;
-  }
+/* === Global Styles === */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #111;
+  color: #eee;
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
 
-  a { text-decoration: none; color: inherit; }
+a { text-decoration: none; color: inherit; }
 
-  /* Top bar */
-  .top-bar {
-    display: flex; justify-content: space-between; align-items: center;
-    background: rgba(20,20,20,0.95); padding: 10px 20px; border-radius: 15px 15px 0 0;
-    position: sticky; top: 0; z-index: 100;
-  }
-  .top-left img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; cursor: pointer; }
-  .top-right { display: flex; align-items: center; gap: 20px; }
-  .genres { position: relative; cursor: pointer; }
-  .genres ul { display: none; position: absolute; top: 30px; right: 0; background: #222; list-style: none; padding: 10px; border-radius: 10px; }
-  .genres:hover ul { display: block; }
-  .genres ul li { padding: 5px 10px; cursor: pointer; }
+/* Top bar */
+.top-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(20,20,20,0.95); padding: 10px 20px; border-radius: 15px 15px 0 0;
+  position: sticky; top: 0; z-index: 100;
+}
+.top-bar img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; cursor: pointer; }
 
-  /* Hero slider */
-  .hero-slider { position: relative; overflow: hidden; border-radius: 0 0 15px 15px; margin-bottom: 20px; height: 400px; }
-  .slide { position: absolute; top:0; left:0; width:100%; height:100%; opacity:0; transition: opacity 1.5s ease-in-out; z-index:0; }
-  .slide.active { opacity:1; z-index:1; }
-  .slide img { width:100%; height:100%; object-fit: cover; filter: brightness(0.5); border-radius: 0 0 15px 15px; }
-  .slide-overlay {
-    position: absolute; bottom: 30px; left: 30px;
-    background: rgba(0,0,0,0.6); padding: 20px; border-radius: 15px;
-    max-width: 400px; color: #fff;
-  }
-  .slide-overlay h2 { margin:0 0 10px; font-size: 24px; }
-  .slide-overlay p { margin:0 0 10px; font-size:14px; color:#ddd; }
-  .watch-btn { display:inline-block; padding:8px 15px; background:#1e90ff; color:#fff; border-radius:10px; font-size:14px; text-decoration:none; transition: background 0.3s; }
-  .watch-btn:hover { background: #63b3ff; }
+/* Hero Slider */
+.hero-slider { position: relative; overflow: hidden; border-radius: 0 0 15px 15px; margin-bottom: 20px; height: 400px; }
+.slide { position: absolute; top:0; left:0; width:100%; height:100%; opacity:0; transition: opacity 1.5s ease-in-out; z-index:0; }
+.slide.active { opacity:1; z-index:1; }
+.slide img { width:100%; height:100%; object-fit: cover; filter: brightness(0.5); border-radius: 0 0 15px 15px; }
+.slide-overlay {
+  position: absolute; bottom: 30px; left: 30px;
+  background: rgba(0,0,0,0.6); padding: 20px; border-radius: 15px;
+  max-width: 400px; color: #fff;
+}
+.slide-overlay h2 { margin:0 0 10px; font-size: 24px; }
+.slide-overlay p { margin:0 0 10px; font-size:14px; color:#ddd; }
+.watch-btn { display:inline-block; padding:8px 15px; background:#1e90ff; color:#fff; border-radius:10px; font-size:14px; text-decoration:none; transition: background 0.3s; }
+.watch-btn:hover { background: #63b3ff; }
 
-  /* Movie rows */
-  .row-container {
-    display: flex; gap: 15px; padding: 10px 0; overflow-x: auto;
-    scrollbar-width: none;
-  }
-  .row-container::-webkit-scrollbar { display: none; }
+/* Movie Rows */
+.row-wrapper { position: relative; overflow: hidden; margin-bottom: 30px; }
+.row { display: flex; gap: 15px; overflow-x: auto; scroll-behavior: smooth; padding: 10px; }
+.row::-webkit-scrollbar { display: none; }
+.row-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(30,30,30,0.7); border:none; color:#fff; font-size:2rem; padding:5px 10px; cursor:pointer; border-radius: 8px; z-index: 10; }
+.row-arrow-left { left: 5px; }
+.row-arrow-right { right: 5px; }
 
-  .movie-card {
-    flex: 0 0 150px;
-    background: #222;
-    border-radius: 12px;
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s;
-    cursor: pointer;
-  }
-  .movie-card img {
-    width: 100%;
-    height: 225px;
-    object-fit: cover;
-    display: block;
-  }
-  .movie-card .title-box {
-    background: #333;
-    padding: 8px 5px;
-    color: #fff;
-    font-size: 12px;
-    transition: all 0.3s;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  .movie-card:hover { transform: scale(1.05); }
-  .movie-card:hover .title-box { white-space: normal; font-size: 14px; padding: 10px; }
+/* Movie Card */
+.movie-card { flex: 0 0 auto; width: 150px; text-align: center; cursor: pointer; position: relative; }
+.movie-card img { width: 100%; border-radius: 12px; display: block; transition: transform 0.3s; }
+.movie-card .title-box { background: #333; padding: 8px 5px; color: #fff; font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; transition: all 0.3s; }
+.movie-card:hover img { transform: scale(1.05); }
+.movie-card:hover .title-box { white-space: normal; font-size: 14px; padding: 10px; }
 
-  /* About box */
-  .about-box { flex:0 0 220px; background: rgba(18,18,18,0.9); padding: 15px; border-radius: 12px; font-size: 14px; line-height: 1.4; }
-  .about-box img { width:100%; border-radius: 10px; margin-bottom: 15px; }
+/* About Box */
+.about-box { flex:0 0 220px; background: rgba(18,18,18,0.9); padding: 15px; border-radius: 12px; font-size: 14px; line-height: 1.4; }
+.about-box img { width:100%; border-radius: 10px; margin-bottom: 15px; }
 
-  /* Responsive */
-  @media(max-width:768px) {
-    .top-bar { flex-direction: column; gap: 10px; }
-    .about-box { display: none; }
-    .movie-card { flex: 0 0 120px; }
-    .movie-card img { height: 180px; }
-  }
+/* Responsive */
+@media(max-width:768px){
+  .hero-slider { height: 250px; }
+  .movie-card { width: 120px; }
+  .movie-card img { height: 180px; }
+  .slide-overlay { bottom: 15px; left: 15px; padding: 15px; max-width: 90%; }
+  .slide-overlay h2 { font-size: 18px; }
+  .slide-overlay p { font-size: 12px; }
+  .watch-btn { padding: 6px 12px; font-size: 12px; }
+  .about-box { display: none; }
+}
 </style>
 </head>
 <body>
 
-<div class="top-bar" style="display: flex; align-items: center; gap: 10px; padding: 5px;">
-  <img src="https://clipground.com/images/hatsune-miku-gif-clipart-3.gif" alt="Logo" style="height: 50px;">
-  <span style="color: #fff; font-weight: bold;">CASTYS ANIME WRLD</span>
-  <a href="popular.html" class="popular-btn" style="text-decoration: none; color: #fff; font-weight: bold;">
-     Click Me to watch Popular Shows!
-  </a>
+<div class="top-bar">
+  <img src="https://clipground.com/images/hatsune-miku-gif-clipart-3.gif" alt="Logo">
+  <span style="font-weight:bold;">CASTYS ANIME WRLD</span>
+  <a href="popular.html" style="font-weight:bold; color:#fff;">Click Me to watch Popular Shows!</a>
 </div>
 
-  <!-- Hero Slider -->
-  <section class="hero-slider">
-    <div class="slide active">
-      <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/featured1.jpg" alt="Featured 1">
-      <div class="slide-overlay">
-        <h2>That Time I Got Reincarnated as a Slime</h2>
-        <p>A man is reincarnated into a fantasy world as a slime and gains incredible powers.</p>
-        <a href="shows/movie1.html" class="watch-btn">Watch Now</a>
-      </div>
+<!-- Hero Slider -->
+<section class="hero-slider">
+  <div class="slide active">
+    <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/featured1.jpg" alt="Featured 1">
+    <div class="slide-overlay">
+      <h2>That Time I Got Reincarnated as a Slime</h2>
+      <p>A man is reincarnated into a fantasy world as a slime and gains incredible powers.</p>
+      <a href="shows/movie1.html" class="watch-btn">Watch Now</a>
     </div>
-    <div class="slide">
-      <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/featured2.jpg" alt="Featured 2">
-      <div class="slide-overlay">
-        <h2>Bochi The Rock!</h2>
-        <p>A shy Girl is to scared to play In a Band Until...</p>
-        <a href="shows/bochitherock.html" class="watch-btn">Coming Soon...</a>
-      </div>
+  </div>
+  <div class="slide">
+    <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/featured2.jpg" alt="Featured 2">
+    <div class="slide-overlay">
+      <h2>Bochi The Rock!</h2>
+      <p>A shy Girl is to scared to play In a Band Until...</p>
+      <a href="shows/bochitherock.html" class="watch-btn">Coming Soon...</a>
     </div>
-    <div class="slide">
-      <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/featured3.jpg" alt="Featured 3">
-      <div class="slide-overlay">
-        <h2>KonoSuba: God's Blessing</h2>
-        <p>Follow Kazuma and his hilariously dysfunctional party on fantasy adventures.</p>
-        <a href="shows/movie2.html" class="watch-btn">Watch Now</a>
-      </div>
+  </div>
+  <div class="slide">
+    <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/featured3.jpg" alt="Featured 3">
+    <div class="slide-overlay">
+      <h2>KonoSuba: God's Blessing</h2>
+      <p>Follow Kazuma and his hilariously dysfunctional party on fantasy adventures.</p>
+      <a href="shows/movie2.html" class="watch-btn">Watch Now</a>
     </div>
-  </section>
+  </div>
+</section>
+
 <!-- Favorites Row -->
 <section style="display:flex; gap:20px; margin:20px;">
-
-  <!-- About Box -->
-  <div class="about-box" style="flex:0 0 200px; background:rgba(18,18,18,0.9); padding:15px; border-radius:12px; color:#fff;">
+  <div class="about-box">
     <h3>About This Project</h3>
-    <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/thumbnails/casty.png" alt="Miku GIF" style="width:100%; border-radius:10px; margin-bottom:10px;">
+    <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/thumbnails/casty.png" alt="Miku GIF">
     <p>This is a curated collection of anime series I have observed and critically enjoyed. Contact via Instagram or Discord: <strong>#chickenmaaster#6838</strong>.</p>
   </div>
 
-  <!-- Favorite Isekai Movies -->
   <div style="flex:1;">
     <h2>Casty's Favorite Isekai's</h2>
-    <div class="row-container">
-      <a href="shows/movie1.html" class="movie-card">
-        <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/thumbnails/slimesan.jpg" alt="Movie 1">
-        <div class="title-box">That Time I Got Reincarnated as a Slime!</div>
-      </a>
-      <a href="shows/movie2.html" class="movie-card">
-        <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/thumbnails/konosuba.jpg" alt="Movie 2">
-        <div class="title-box">KonoSuba: God's Blessing on This Wonderful World</div>
-      </a>
-      <a href="shows/tanya.html" class="movie-card">
-        <img src="https://i.pinimg.com/736x/69/92/09/6992099f0c8327b6d934f4ba17a127c4.jpg" alt="Movie 3">
-        <div class="title-box">Saga of Tanya the Evil</div>
-      </a>
-      <a href="shows/nogamenolife.html" class="movie-card">
-        <img src="https://i.pinimg.com/736x/36/39/f9/3639f99e1565b8c3ae434434e0a1e45b.jpg" alt="Movie 4">
-        <div class="title-box">No Game No Life</div>
-      </a>
+    <div class="row-wrapper">
+      <button class="row-arrow row-arrow-left">&#10094;</button>
+      <div class="row">
+        <a href="shows/movie1.html" class="movie-card">
+          <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/thumbnails/slimesan.jpg" alt="Movie 1">
+          <div class="title-box">That Time I Got Reincarnated as a Slime!</div>
+        </a>
+        <a href="shows/movie2.html" class="movie-card">
+          <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/thumbnails/konosuba.jpg" alt="Movie 2">
+          <div class="title-box">KonoSuba: God's Blessing on This Wonderful World</div>
+        </a>
+        <a href="shows/tanya.html" class="movie-card">
+          <img src="https://i.pinimg.com/736x/69/92/09/6992099f0c8327b6d934f4ba17a127c4.jpg" alt="Movie 3">
+          <div class="title-box">Saga of Tanya the Evil</div>
+        </a>
+        <a href="shows/nogamenolife.html" class="movie-card">
+          <img src="https://i.pinimg.com/736x/36/39/f9/3639f99e1565b8c3ae434434e0a1e45b.jpg" alt="Movie 4">
+          <div class="title-box">No Game No Life</div>
+        </a>
+      </div>
+      <button class="row-arrow row-arrow-right">&#10095;</button>
     </div>
   </div>
-
 </section>
 
 <!-- Recommended Section -->
-<section class="section-container" style="margin:20px 20px 40px 20px;">
+<section style="margin:20px 20px 40px 20px;">
   <h2>Casty's Recommended</h2>
-  <div class="row-container">
-    <a href="shows/cyberpunk.html" class="movie-card">
-      <img src="https://i.pinimg.com/1200x/1c/d8/34/1cd834c31f457a4bc9431a365c5bcf66.jpg" alt="Cyberpunk">
-      <div class="title-box">CyberPunk: Edge Runners</div>
-    </a>
-    <a href="shows/overlord.html" class="movie-card">
-      <img src="https://i.pinimg.com/originals/aa/91/64/aa91646c6bfffa8cfb0f5c1b00fae44d.jpg" alt="Overlord">
-      <div class="title-box">Overlord</div>
-    </a>
-    <a href="shows/rezero.html" class="movie-card">
-      <img src="https://i.pinimg.com/originals/1e/7a/aa/1e7aaa78b2dfef6b2c0c81e7f3c8e22c.jpg" alt="Re:Zero">
-      <div class="title-box">Re:Zero</div>
-    </a>
-    <!-- Add more recommended movie cards here -->
+  <div class="row-wrapper">
+    <button class="row-arrow row-arrow-left">&#10094;</button>
+    <div class="row">
+      <a href="shows/cyberpunk.html" class="movie-card">
+        <img src="https://i.pinimg.com/1200x/1c/d8/34/1cd834c31f457a4bc9431a365c5bcf66.jpg" alt="Cyberpunk">
+        <div class="title-box">CyberPunk: Edge Runners</div>
+      </a>
+      <a href="shows/overlord.html" class="movie-card">
+        <img src="https://i.pinimg.com/originals/aa/91/64/aa91646c6bfffa8cfb0f5c1b00fae44d.jpg" alt="Overlord">
+        <div class="title-box">Overlord</div>
+      </a>
+      <a href="shows/rezero.html" class="movie-card">
+        <img src="https://i.pinimg.com/originals/1e/7a/aa/1e7aaa78b2dfef6b2c0c81e7f3c8e22c.jpg" alt="Re:Zero">
+        <div class="title-box">Re:Zero</div>
+      </a>
+    </div>
+    <button class="row-arrow row-arrow-right">&#10095;</button>
   </div>
 </section>
 
 <script>
+// ===== Hero Slider =====
 const slides = document.querySelectorAll('.slide');
-let currentIndex = 0;
+let currentSlide = 0;
+slides[currentSlide].classList.add('active');
 setInterval(() => {
-  slides[currentIndex].classList.remove('active');
-  currentIndex = (currentIndex + 1) % slides.length;
-  slides[currentIndex].classList.add('active');
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add('active');
 }, 4000);
+
+// ===== Row Arrows =====
+document.querySelectorAll('.row-wrapper').forEach(wrapper => {
+  const row = wrapper.querySelector('.row');
+  const leftArrow = wrapper.querySelector('.row-arrow-left');
+  const rightArrow = wrapper.querySelector('.row-arrow-right');
+
+  leftArrow.addEventListener('click', () => row.scrollBy({ left: -300, behavior: 'smooth' }));
+  rightArrow.addEventListener('click', () => row.scrollBy({ left: 300, behavior: 'smooth' }));
+
+  // ===== Drag / Swipe =====
+  let isDown = false, startX, scrollLeft;
+
+  row.addEventListener('mousedown', e => {
+    isDown = true;
+    startX = e.pageX - row.offsetLeft;
+    scrollLeft = row.scrollLeft;
+  });
+  row.addEventListener('mouseleave', () => isDown = false);
+  row.addEventListener('mouseup', () => isDown = false);
+  row.addEventListener('mousemove', e => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - row.offsetLeft;
+    const walk = (x - startX) * 2;
+    row.scrollLeft = scrollLeft - walk;
+  });
+
+  row.addEventListener('touchstart', e => {
+    startX = e.touches[0].pageX - row.offsetLeft;
+    scrollLeft = row.scrollLeft;
+  });
+  row.addEventListener('touchmove', e => {
+    const x = e.touches[0].pageX - row.offsetLeft;
+    const walk = (x - startX) * 2;
+    row.scrollLeft = scrollLeft - walk;
+  });
+});
 </script>
 
 </body>
