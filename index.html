@@ -4,13 +4,45 @@
   <link rel="icon" type="image/png" href="https://www.pngarts.com/files/9/Anime-Miku-Hatsune-PNG-Transparent-Image.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Casty anime WRLD</title>
+  <title>Casty Anime WRLD</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://clipground.com/images/hatsune-miku-gif-clipart-3.gif" alt="Logo">
+      <h1>Casty Anime WRLD</h1>
+    </div>
+
+    <nav class="nav-links">
+      <div class="dropdown">
+        <button class="dropbtn">Genres ▼</button>
+        <div class="dropdown-content">
+          <a href="#">Action</a>
+          <a href="#">Comedy</a>
+          <a href="#">Romance</a>
+          <a href="#">Isekai</a>
+          <a href="#">Horror</a>
+        </div>
+      </div>
+      <a href="#">Trending</a>
+      <a href="#">Watchlist</a>
+      <a href="#">Recent Releases</a>
+    </nav>
+
+    <!-- Search bar -->
+    <div class="search-box">
+      <input type="text" placeholder="Search anime...">
+    </div>
+
+    <!-- Dark/Light Mode Toggle -->
+    <button class="theme-toggle" id="themeToggle">🌙</button>
+  </header>
 
   <!-- Hero Slider -->
   <section class="hero-slider">
@@ -22,68 +54,86 @@
     <div class="fade-overlay"></div>
   </section>
 
-<!-- Container for About Me + Favorite Isekai -->
-<section style="display: flex; gap: 20px; align-items: flex-start; margin: 20px;">
-  
-  <!-- About Me box on the left -->
-  <div style="flex: 0 0 200px; background: rgba(18,18,18,0.9); padding: 15px; border-radius: 12px; color: #fff; font-size: 14px; line-height: 1.4;">
-    <h3 style="margin-top:0; font-size:16px;">About This Project</h3>
-    <img src="https://clipground.com/images/hatsune-miku-gif-clipart-3.gif" alt="Miku Mwah GIF" style="width:100%; border-radius:10px; margin-bottom:15px;">
-   <p>This is a curated collection of anime series I have observed and critically enjoyed. I hope you find these recommendations engaging and insightful.  
-For inquiries or discussion, you may contact me on Instagram or via Discord: <strong>#chickenmaaster#6838</strong>.
-   BE ADVISED MOBILE SUPPORT SOON (YOU CAN STILL WATCH SHOWS ON MOBILE BUT THE SITE IS A LITTLE ODD</p>
-  </div>
+  <!-- Container for About Me + Favorite Isekai -->
+  <section style="display: flex; gap: 20px; align-items: flex-start; margin: 20px;">
+    
+    <!-- About Me box on the left -->
+    <div style="flex: 0 0 200px; background: rgba(18,18,18,0.9); padding: 15px; border-radius: 12px; color: #fff; font-size: 14px; line-height: 1.4;">
+      <h3 style="margin-top:0; font-size:16px;">About This Project</h3>
+      <img src="https://clipground.com/images/hatsune-miku-gif-clipart-3.gif" alt="Miku GIF" style="width:100%; border-radius:10px; margin-bottom:15px;">
+      <p>This is a curated collection of anime series I have observed and critically enjoyed. I hope you find these recommendations engaging and insightful.  
+      For inquiries or discussion, contact me on Discord: <strong>#chickenmaaster#6838</strong>.  
+      <em>Mobile support coming soon!</em></p>
+    </div>
 
-  <!-- Favorite Isekai movies row -->
-  <div style="flex: 1;">
-    <h2>Casty's Favorite Isekai's</h2>
-    <div class="row">
-      <div class="movie-card">
-        <a href="shows/movie1.html">
-          <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/thumbnails/slimesan.jpg" alt="Movie 1">
-          <button class="btn" id="subBtn">That Time I Got Reincarnated as a Slime!</button>
-        </a>
-      </div>
-      <div class="movie-card">
-        <a href="shows/movie2.html">
-          <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/thumbnails/konosuba.jpg" alt="Movie 2">
-          <button class="btn" id="subBtn">KonoSuba: God's Blessing on This Wonderful World</button>
-        </a>
-      </div>
-      <div class="movie-card">
-        <a href="shows/tanya.html">
-          <img src="https://i.pinimg.com/736x/69/92/09/6992099f0c8327b6d934f4ba17a127c4.jpg" alt="Movie 3">
-          <button class="btn" id="subBtn">Saga of Tanya the Evil</button>
-        </a>
-      </div>
-            <div class="movie-card">
-        <a href="shows/nogamenolife.html">
-          <img src="https://i.pinimg.com/736x/36/39/f9/3639f99e1565b8c3ae434434e0a1e45b.jpg" alt="Movie 3">
-          <button class="btn" id="subBtn">No Game No Life</button>
-        </a>
+    <!-- Favorite Isekai movies row -->
+    <div style="flex: 1;">
+      <h2>Casty's Favorite Isekai's</h2>
+      <div class="row scrollable">
+        <div class="movie-card">
+          <a href="shows/movie1.html">
+            <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/thumbnails/slimesan.jpg" alt="Movie 1">
+            <button class="btn">That Time I Got Reincarnated as a Slime!</button>
+          </a>
+        </div>
+        <div class="movie-card">
+          <a href="shows/movie2.html">
+            <img src="https://raw.githubusercontent.com/Ciscodcpy/ani/refs/heads/main/assets/thumbnails/konosuba.jpg" alt="Movie 2">
+            <button class="btn">KonoSuba: God's Blessing on This Wonderful World</button>
+          </a>
+        </div>
+        <div class="movie-card">
+          <a href="shows/tanya.html">
+            <img src="https://i.pinimg.com/736x/69/92/09/6992099f0c8327b6d934f4ba17a127c4.jpg" alt="Movie 3">
+            <button class="btn">Saga of Tanya the Evil</button>
+          </a>
+        </div>
+        <div class="movie-card">
+          <a href="shows/nogamenolife.html">
+            <img src="https://i.pinimg.com/736x/36/39/f9/3639f99e1565b8c3ae434434e0a1e45b.jpg" alt="Movie 4">
+            <button class="btn">No Game No Life</button>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
- 
-    </section>
-  
-  <!-- Recommended section below -->
+  </section>
+
+  <!-- Recommended section with horizontal scroll -->
   <section class="movie-row" style="margin: 20px;">
     <h2>Casty's Recommended</h2>
-    <div class="row">
-      <!-- More movies here -->
+    <div class="row scrollable">
       <div class="movie-card">
         <a href="shows/cyberpunk.html">
-          <img src="https://i.pinimg.com/1200x/1c/d8/34/1cd834c31f457a4bc9431a365c5bcf66.jpg" alt="Movie 1">
-          <button class="btn" id="subBtn">CyberPunk: Edge Runners</button>
+          <img src="https://i.pinimg.com/1200x/1c/d8/34/1cd834c31f457a4bc9431a365c5bcf66.jpg" alt="Cyberpunk">
+          <button class="btn">CyberPunk: Edge Runners</button>
         </a>
       </div>
+      <!-- more movies go here -->
     </div>
+  </section>
+
+  <!-- Trending Section -->
+  <section class="movie-row" style="margin: 20px;">
+    <h2>🔥 Trending Now</h2>
+    <ol class="trending-list">
+      <li>#1 One Piece</li>
+      <li>#2 Demon Slayer</li>
+      <li>#3 Jujutsu Kaisen</li>
+      <li>#4 Attack on Titan</li>
+      <li>#5 My Hero Academia</li>
+    </ol>
+  </section>
+
+  <!-- Watchlist placeholder -->
+  <section class="movie-row" style="margin: 20px;">
+    <h2>⭐ Your Watchlist</h2>
+    <p>Save shows by clicking "Add to Watchlist".</p>
   </section>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
